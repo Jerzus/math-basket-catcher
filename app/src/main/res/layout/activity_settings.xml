@@ -43,10 +43,24 @@
         android:layout_marginEnd="48dp"
         android:text="@string/difficulty"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnBackToMenu"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdvancedSettings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnGameMode" />
+
+    <Button
+        android:id="@+id/btnAdvancedSettings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:text="@string/advanced_settings"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBackToMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDifficulty" />
 
     <Button
         android:id="@+id/btnBackToMenu"
@@ -60,6 +74,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDifficulty" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAdvancedSettings" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

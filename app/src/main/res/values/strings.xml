@@ -6,4 +6,29 @@
     <string name="difficulty">Difficulty</string>
     <string name="back_to_menu">Back to menu</string>
     <string name="exit">Exit</string>
+    <string name="advanced_settings">Advanced settings</string>
+    <string name="save">Save</string>
+    <string name="load">Load</string>
+    <string name="back">Back</string>
+
+    <string name="game_mode_value">Game mode: %1$s</string>
+    <string name="difficulty_value">Difficulty: %1$s</string>
+
+    <string-array name="game_modes">
+        <item>Baskets</item>
+        <item>Flying numbers</item>
+        <item>Count and click</item>
+    </string-array>
+
+    <string-array name="game_mode_descriptions">
+        <item>Tap the basket that fits the result</item>
+        <item>Fill in the equations with flying digits</item>
+        <item>Tap the result, each number only once</item>
+    </string-array>
+
+    <string-array name="difficulty_levels">
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
 </resources>
