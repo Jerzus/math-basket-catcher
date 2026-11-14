@@ -1,11 +1,10 @@
 package com.example.mathbasketcatcher;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -19,7 +18,6 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_settings);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -28,25 +26,25 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         String[] modes = getResources().getStringArray(R.array.game_modes);
-        String[] descriptions = getResources().getStringArray(R.array.game_mode_descriptions);
         String[] levels = getResources().getStringArray(R.array.difficulty_levels);
-
-        String[] items = new String[modes.length];
-        for (int i = 0; i < modes.length; i++) {
-            items[i] = modes[i] + "\n" + descriptions[i];
-        }
 
         Button btnGameMode = findViewById(R.id.btnGameMode);
         btnGameMode.setText(getString(R.string.game_mode_value, modes[mode]));
         btnGameMode.setOnClickListener(v -> {
-            new AlertDialog.Builder(this)
-                    .setTitle(R.string.game_mode)
-                    .setSingleChoiceItems(items, mode, (dialog, which) -> {
-                        mode = which;
-                        btnGameMode.setText(getString(R.string.game_mode_value, modes[mode]));
-                        dialog.dismiss();
-                    })
-                    .show();
+            // okno na cały ekran
+            Dialog dialog = new Dialog(this, R.style.Theme_MathBasketCatcher);
+            dialog.setContentView(R.layout.dialog_game_mode);
+            int[] ids = {R.id.modeBaskets, R.id.modeFlying, R.id.modeCalc};
+            for (int i = 0; i < ids.length; i++) {
+                int which = i;
+                dialog.findViewById(ids[i]).setOnClickListener(view -> {
+                    mode = which;
+                    btnGameMode.setText(getString(R.string.game_mode_value, modes[mode]));
+                    dialog.dismiss();
+                });
+            }
+            dialog.findViewById(R.id.btnBack).setOnClickListener(view -> dialog.dismiss());
+            dialog.show();
         });
 
         Button btnDifficulty = findViewById(R.id.btnDifficulty);

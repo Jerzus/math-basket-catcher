@@ -10,20 +10,28 @@
     <string name="save">Save</string>
     <string name="load">Load</string>
     <string name="back">Back</string>
+    <string name="resume">Resume</string>
+    <string name="pause">Pause</string>
+    <string name="paused">Paused</string>
+    <string name="already_used">Already used</string>
+    <string name="round_over">Round over</string>
 
     <string name="game_mode_value">Game mode: %1$s</string>
     <string name="difficulty_value">Difficulty: %1$s</string>
+    <string name="score_errors">Score: %1$d   Errors: %2$d</string>
+    <string name="round_result">Score: %1$d\nErrors: %2$d\nTime: %3$d s</string>
+
+    <string name="mode_baskets">Baskets</string>
+    <string name="mode_flying">Flying numbers</string>
+    <string name="mode_calc">Count and click</string>
+    <string name="mode_baskets_desc">Tap the basket that fits the result</string>
+    <string name="mode_flying_desc">Fill in the equations with flying digits</string>
+    <string name="mode_calc_desc">Tap the result, each number only once</string>
 
     <string-array name="game_modes">
-        <item>Baskets</item>
-        <item>Flying numbers</item>
-        <item>Count and click</item>
-    </string-array>
-
-    <string-array name="game_mode_descriptions">
-        <item>Tap the basket that fits the result</item>
-        <item>Fill in the equations with flying digits</item>
-        <item>Tap the result, each number only once</item>
+        <item>@string/mode_baskets</item>
+        <item>@string/mode_flying</item>
+        <item>@string/mode_calc</item>
     </string-array>
 
     <string-array name="difficulty_levels">
