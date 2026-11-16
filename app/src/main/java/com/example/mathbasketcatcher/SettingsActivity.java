@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private int mode = 0;
+    public static int mode = 2;   // 0 - Baskets, 1 - Fill the gaps, 2 - Count and click
     private int difficulty = 0;
 
     @Override
@@ -34,7 +34,7 @@ public class SettingsActivity extends AppCompatActivity {
             // okno na cały ekran
             Dialog dialog = new Dialog(this, R.style.Theme_MathBasketCatcher);
             dialog.setContentView(R.layout.dialog_game_mode);
-            int[] ids = {R.id.modeBaskets, R.id.modeFlying, R.id.modeCalc};
+            int[] ids = {R.id.modeBaskets, R.id.modeGaps, R.id.modeCount};
             for (int i = 0; i < ids.length; i++) {
                 int which = i;
                 dialog.findViewById(ids[i]).setOnClickListener(view -> {

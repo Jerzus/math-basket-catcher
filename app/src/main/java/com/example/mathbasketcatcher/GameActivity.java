@@ -12,11 +12,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.mathbasketcatcher.modes.CountAndClickMode;
+import com.example.mathbasketcatcher.modes.FillTheGapsMode;
+import com.example.mathbasketcatcher.modes.GameMode;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class GameActivity extends AppCompatActivity {
 
-    private CalcMode mode;
+    private GameMode mode;
     private GameView gameView;
     private TextView tvStats;
     private TextView tvExpression;
@@ -51,7 +54,11 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
-        mode = new CalcMode();
+        if (SettingsActivity.mode == 1) {
+            mode = new FillTheGapsMode();
+        } else {
+            mode = new CountAndClickMode();
+        }
         gameView.mode = mode;
         chTime.setBase(SystemClock.elapsedRealtime());
         chTime.start();
@@ -94,12 +101,18 @@ public class GameActivity extends AppCompatActivity {
         refresh();
     }
 
+    public void chooseEquation(int i) {
+        ((FillTheGapsMode) mode).chooseEquation(i);
+        refresh();
+    }
+
     private void refresh() {
         tvStats.setText(getString(R.string.score_errors, mode.score, mode.errors));
-        if (mode.isOver()) {
-            tvExpression.setText("");
+        // w Fill the gaps działania są na planszy
+        if (mode instanceof CountAndClickMode && !mode.isOver()) {
+            tvExpression.setText(((CountAndClickMode) mode).expression + " = ?");
         } else {
-            tvExpression.setText(mode.expression + " = ?");
+            tvExpression.setText("");
         }
         tvLastMove.setText(mode.lastMove);
         if (mode.lastGood) {

@@ -22,16 +22,16 @@
     <string name="round_result">Score: %1$d\nErrors: %2$d\nTime: %3$d s</string>
 
     <string name="mode_baskets">Baskets</string>
-    <string name="mode_flying">Flying numbers</string>
-    <string name="mode_calc">Count and click</string>
+    <string name="mode_gaps">Fill the gaps</string>
+    <string name="mode_count">Count and click</string>
     <string name="mode_baskets_desc">Tap the basket that fits the result</string>
-    <string name="mode_flying_desc">Fill in the equations with flying digits</string>
-    <string name="mode_calc_desc">Tap the result, each number only once</string>
+    <string name="mode_gaps_desc">Find the missing numbers, each only once</string>
+    <string name="mode_count_desc">Tap the result, each number only once</string>
 
     <string-array name="game_modes">
         <item>@string/mode_baskets</item>
-        <item>@string/mode_flying</item>
-        <item>@string/mode_calc</item>
+        <item>@string/mode_gaps</item>
+        <item>@string/mode_count</item>
     </string-array>
 
     <string-array name="difficulty_levels">

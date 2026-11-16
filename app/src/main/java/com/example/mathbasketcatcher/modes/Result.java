@@ -1,4 +1,4 @@
-package com.example.mathbasketcatcher;
+package com.example.mathbasketcatcher.modes;
 
 import java.util.Random;
 
